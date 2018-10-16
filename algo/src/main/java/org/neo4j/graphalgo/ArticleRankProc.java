@@ -87,7 +87,7 @@ public final class ArticleRankProc {
         TerminationFlag terminationFlag = TerminationFlag.wrap(transaction);
         PageRankResult scores = evaluate(graph, tracker, terminationFlag, configuration, statsBuilder);
 
-        log.info("PageRank: overall memory usage: %s", tracker.getUsageString());
+        log.info("ArticleRank: overall memory usage: %s", tracker.getUsageString());
 
         write(graph, terminationFlag, scores, configuration, statsBuilder);
 
@@ -98,7 +98,7 @@ public final class ArticleRankProc {
     @Description("CALL algo.articleRank.stream(label:String, relationship:String, " +
             "{iterations:20, dampingFactor:0.85, weightProperty: null, concurrency:4}) " +
             "YIELD node, score - calculates page rank and streams results")
-    public Stream<PageRankScore> pageRankStream(
+    public Stream<PageRankScore> articleRankStream(
             @Name(value = "label", defaultValue = "") String label,
             @Name(value = "relationship", defaultValue = "") String relationship,
             @Name(value = "config", defaultValue = "{}") Map<String, Object> config) {
@@ -117,7 +117,7 @@ public final class ArticleRankProc {
         TerminationFlag terminationFlag = TerminationFlag.wrap(transaction);
         PageRankResult scores = evaluate(graph, tracker, terminationFlag, configuration, statsBuilder);
 
-        log.info("PageRank: overall memory usage: %s", tracker.getUsageString());
+        log.info("ArticleRank: overall memory usage: %s", tracker.getUsageString());
 
         if (graph instanceof HugeGraph) {
             HugeGraph hugeGraph = (HugeGraph) graph;
