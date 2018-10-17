@@ -49,7 +49,7 @@ public interface PageRankAlgorithm {
         ComputeStepFactory computeStepFactory = new ArticleRankComputeStepFactory();
         if (graph instanceof HugeGraph) {
             HugeGraph huge = (HugeGraph) graph;
-            return new HugePageRank(tracker, huge, dampingFactor, sourceNodeIds, computeStepFactory);
+            return new HugeArticleRank(tracker, huge, dampingFactor, sourceNodeIds, computeStepFactory);
         }
 
         return new PageRank(graph, dampingFactor, sourceNodeIds, computeStepFactory);

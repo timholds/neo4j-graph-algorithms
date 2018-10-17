@@ -1,4 +1,4 @@
- [[algorithms-pagerank]]
+[[algorithms-pagerank]]
 = The PageRank algorithm
 
 [abstract]
