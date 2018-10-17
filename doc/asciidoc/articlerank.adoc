@@ -1,5 +1,5 @@
 [[algorithms-pagerank]]
-= The PageRank algorithm
+= The ArticleRank algorithm
 
 [abstract]
 --
